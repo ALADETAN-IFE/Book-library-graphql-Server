@@ -20,6 +20,7 @@
     "graphql-tag": "^2.12.6"
   },
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "nodemon": "^2.0.22"
   }
 }
