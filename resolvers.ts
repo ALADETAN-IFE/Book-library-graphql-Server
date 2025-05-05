@@ -63,6 +63,10 @@ const resolvers = {
     books: (author: Author): Book[] =>
       books.filter(book => book.authorId === author.id),
   },
+  AddAuthorToBookResult: {
+    book: (parent: { book: Book }) => parent.book,
+    author: (parent: { author: Author }) => parent.author,
+  },
 };
 
 export default resolvers;
