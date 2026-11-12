@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "npm run build && nodemon dist/index.js",
-    "dev": "nodemon --exec ts-node src/index.ts",
+    "build": "node init && tsc",
+    "start": "node init && npm run build && nodemon dist/index.js",
+    "dev": "node init && nodemon --exec ts-node src/index.ts",
     "lint": "eslint .",
     "test": "jest"
   },
@@ -17,7 +17,8 @@
     "@apollo/server": "^4.12.0",
     "dotenv": "^16.5.0",
     "graphql": "^16.11.0",
-    "graphql-tag": "^2.12.6"
+    "graphql-tag": "^2.12.6",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "@types/node": "^25.2.3",
